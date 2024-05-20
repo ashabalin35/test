@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	<meta name="viewport" content='width=1000' />
+    <meta charset="utf-8" />
+        <title>
+            Эфирная справка
+        </title>
+    </head
+    <body>
+        <h3>
+        	{% if message %}
+		<p>{{ message }}</p>
+		{% endif %}
+        	{% if filename %}
+		<a href = "{{ url_for('Download_File', filename=filename) }}">{{ filename }}</a>
+		{% endif %}
+        </h3>
+        <p>
+            <form action="" method="post">
+                канал MMA <input type="radio" checked name="channel" value="MMA" >
+		канал ETV <input type="radio" name="channel" value="ETV"><br/><br/>
+		Ищем по: <br/>
+		Оверлей <input type="radio" checked name="type" value="1" >
+		Основное событие <input type="radio" name="type" value="2"><br/>
+		ID <input type="radio" name="col" value="ID">
+		Названию <input type="radio" checked name="col" value="name" ><br/><br/>
+		Что ищем: <input type="text" name="partner"><br/><br/>
+		Начальную дату: <input type="date" name="data1" required="required"><br/>
+		Конечную дату: <input type="date" name="data2" required="required"><br/><br/>
+                <input type="submit" value="Запросить" >
+            </form>
+        </p>
+    </body>
+</html>
