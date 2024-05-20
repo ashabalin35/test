@@ -1,4 +1,4 @@
-# import sys
+# import sys yt bcgjkmpetv
 from flask import Flask, render_template, send_file, request, render_template_string
 from prepare import write_log_ove, write_log_main
 
